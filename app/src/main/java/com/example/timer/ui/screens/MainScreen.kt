@@ -7,18 +7,15 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.Icon
-import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.PlayCircle
-import androidx.compose.material.icons.outlined.Backspace
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.timer.R
+import com.example.timer.data.TimerData
+import com.example.timer.ui.components.TimerSpinner
 import com.example.timer.ui.components.TimerButton
 
 @Composable
@@ -35,18 +32,20 @@ fun MainScreen(
                 .padding(32.dp),
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
-            Text(
-                text = "00h"
+            TimerSpinner(
+                spinnerData = TimerData.numbers0to23,
+                timeUnit = "hours",
+                onClick = {}
             )
-            Text(
-                text = "00m"
+            TimerSpinner(
+                spinnerData = TimerData.numbers0to59,
+                timeUnit = "min",
+                onClick = {}
             )
-            Text(
-                text = "00s"
-            )
-            Icon(
-                imageVector = Icons.Outlined.Backspace,
-                contentDescription = stringResource(R.string.content_description_delete)
+            TimerSpinner(
+                spinnerData = TimerData.numbers0to59,
+                timeUnit = "sec",
+                onClick = {}
             )
         }
 
