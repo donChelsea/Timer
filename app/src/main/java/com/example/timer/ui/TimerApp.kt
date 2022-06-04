@@ -9,8 +9,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.timer.R
+import com.example.timer.ui.screens.MainScreen
 import com.example.timer.ui.theme.TimerTheme
 
 @Composable
@@ -21,7 +23,7 @@ fun TimerApp() {
                 MainAppBar()
             }
         ) { innerPadding ->
-
+            MainScreen()
         }
     }
 }
@@ -42,4 +44,12 @@ fun MainAppBar(
         modifier = modifier,
         elevation = 0.dp
     )
+}
+
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun DefaultTimerApp() {
+    TimerTheme {
+        TimerApp()
+    }
 }
